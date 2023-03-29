@@ -7,39 +7,52 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class RectangleTest {
-    Rectangle dummyRectangle = new Rectangle();
+    Rectangle rectangleObject = new Rectangle();
+    Square squareObject = new Square();
 
     @Nested
-    class Area{
+    class AreaOfRectangle{
         @Test
         void toReturnAreaAsEightWhenLengthIsFourAndBreadthIsTwo(){
-            int expectedArea = 8;
+            int expectedAreaOfRectangle = 8;
 
-            int actualArea = dummyRectangle.areaOfRectangle(4, 2);
+            int actualAreaOfRectangle = rectangleObject.areaOfRectangle(4, 2);
 
-            assertEquals(expectedArea, actualArea);
+            assertEquals(expectedAreaOfRectangle, actualAreaOfRectangle);
         }
 
         @Test
         void toThrowExceptionWhenLengthOrBreadthIsNegative(){
-            assertThrows(IllegalArgumentException.class, () -> dummyRectangle.areaOfRectangle(-8, -2));
+            assertThrows(IllegalArgumentException.class, () -> rectangleObject.areaOfRectangle(-8, -2));
         }
     }
 
     @Nested
-    class Perimeter{
+    class PerimeterOfRectangle{
         @Test
         void toReturnPerimeterAsTwelveWhenLengthIsFourAndBreadthIsTwo(){
-            int expectedPerimeter = 12;
+            int expectedPerimeterOfRectangle = 12;
 
-            int actualPerimeter = dummyRectangle.perimeterOfRectangle(4, 2);
+            int actualPerimeterOfRectangle = rectangleObject.perimeterOfRectangle(4, 2);
 
-            assertEquals(expectedPerimeter, actualPerimeter);
+            assertEquals(expectedPerimeterOfRectangle, actualPerimeterOfRectangle);
         }
 
         @Test
         void toThrowExceptionWhenLengthOrBreadthIsNegative(){
-            assertThrows(IllegalArgumentException.class, () -> dummyRectangle.perimeterOfRectangle(-8, -2));
+            assertThrows(IllegalArgumentException.class, () -> rectangleObject.perimeterOfRectangle(-8, -2));
+        }
+    }
+
+    @Nested
+    class PerimeterOfSquare{
+        @Test
+        void toReturnPerimeterAsEightWhenTheSideIsTwo(){
+            int expectedAreaOfSquare = 8;
+
+            int actualAreaOfSquare = squareObject.perimeterOfSquare(2);
+
+            assertEquals(expectedAreaOfSquare, actualAreaOfSquare);
         }
     }
 
