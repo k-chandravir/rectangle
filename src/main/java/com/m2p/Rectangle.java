@@ -6,14 +6,25 @@ package com.m2p;
 //    }
 //}
 public class Rectangle {
-    public int areaOfRectangle(int lengthOfRectangle, int breadthOfRectangle) {
+    private final int lengthOfRectangle;
+    private final int breadthOfRectangle;
+
+    public Rectangle(int lengthOfRectangle, int breadthOfRectangle){
+        this.lengthOfRectangle = lengthOfRectangle;
+        this.breadthOfRectangle = breadthOfRectangle;
+    }
+
+    public static Rectangle createSquare(int sideOfSquare){
+        return new Rectangle(sideOfSquare, sideOfSquare);
+    }
+    public int area() {
         if(lengthOfRectangle < 0 || breadthOfRectangle < 0){
             throw new IllegalArgumentException();
         }
         return lengthOfRectangle * breadthOfRectangle;
     }
 
-    public int perimeterOfRectangle(int lengthOfRectangle, int breadthOfRectangle) {
+    public int perimeter() {
         if(lengthOfRectangle < 0 || breadthOfRectangle < 0){
             throw new IllegalArgumentException();
         }
