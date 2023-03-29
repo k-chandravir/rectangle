@@ -20,10 +20,10 @@ public class RectangleTest {
             assertEquals(expectedArea, actualArea);
         }
 
-//        @Test
-//        void toThrowExceptionWhenLengthOrBreadthIsNegative(){
-//            assertThrows()
-//        }
+        @Test
+        void toThrowExceptionWhenLengthOrBreadthIsNegative(){
+            assertThrows(IllegalArgumentException.class, () -> dummyRectangle.area(-8, -2));
+        }
     }
 
 }

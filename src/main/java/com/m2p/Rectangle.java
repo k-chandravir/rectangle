@@ -7,6 +7,9 @@ package com.m2p;
 //}
 public class Rectangle {
     public int area(int lengthOfRectangle, int breadthOfRectangle) {
+        if(lengthOfRectangle < 0 || breadthOfRectangle < 0){
+            throw new IllegalArgumentException();
+        }
         return lengthOfRectangle * breadthOfRectangle;
     }
 }
