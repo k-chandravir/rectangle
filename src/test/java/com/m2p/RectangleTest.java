@@ -48,11 +48,23 @@ public class RectangleTest {
     class PerimeterOfSquare{
         @Test
         void toReturnPerimeterAsEightWhenTheSideIsTwo(){
-            int expectedAreaOfSquare = 8;
+            int expectedPerimeterOfSquare = 8;
 
-            int actualAreaOfSquare = squareObject.perimeterOfSquare(2);
+            int actualPerimeterOfSquare = squareObject.perimeterOfSquare(2);
 
-            assertEquals(expectedAreaOfSquare, actualAreaOfSquare);
+            assertEquals(expectedPerimeterOfSquare, actualPerimeterOfSquare);
+        }
+    }
+
+    @Nested
+    class AreaOfSquare{
+        @Test
+        void toReturnAreaAsSixteenWhenTheSideIsFour(){
+            int expectedAreaOfSquare = 16;
+
+            int actualAreaOfSquare = squareObject.areaOfSquare(4);
+
+            assertEquals(expectedAreaOfSquare,actualAreaOfSquare);
         }
     }
 
